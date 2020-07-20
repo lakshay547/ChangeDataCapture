@@ -4,11 +4,16 @@ pipeline{
 
     stages{
 
+        tools{
+
+            maven 'Maven'
+        }
+
         stage("build"){
 
             steps{
                 echo "Building the Application"
-                mvn compile
+                sh "mvn compile"
             }
         }
 
