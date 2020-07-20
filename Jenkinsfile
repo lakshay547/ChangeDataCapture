@@ -8,6 +8,7 @@ pipeline{
 
             steps{
                 echo "Building the Application"
+                mvn compile
             }
         }
 
