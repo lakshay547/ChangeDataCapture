@@ -11,7 +11,7 @@ pipeline{
 
             steps{
                 echo "Building the Application"
-                sh "mvn compile"
+                bat "mvn compile"
             }
         }
 
