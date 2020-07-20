@@ -2,12 +2,10 @@ pipeline{
 
     agent any
 
+    tools{
+        maven "Maven"
+    }
     stages{
-
-        tools{
-
-            maven 'Maven'
-        }
 
         stage("build"){
 
