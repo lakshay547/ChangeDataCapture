@@ -16,8 +16,8 @@ object HiveAccess {
     readFromHiveTable(dbName,tableName,spark,requiredColumns)
   }
 
-  def writeToHiveTable(df: DataFrame,dbName: String,tableName: String): Unit ={
-    df.write.mode("append").insertInto(s"$dbName.$tableName")
+  def writeToHiveTable(df: DataFrame,dbName: String,tableName: String,saveMode: String="append"): Unit ={
+    df.write.mode(s"$saveMode").insertInto(s"$dbName.$tableName")
   }
 
 }
