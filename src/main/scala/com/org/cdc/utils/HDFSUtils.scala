@@ -12,7 +12,6 @@ object HDFSUtils {
   }
 
   def writeToHDFS(df:DataFrame,hdfsPath: String,hdfsFileName: String): Unit ={
-    val spark=df.sparkSession
     df.write.option("delimiter",",").csv(s"$hdfsPath/$hdfsFileName")
   }
 }

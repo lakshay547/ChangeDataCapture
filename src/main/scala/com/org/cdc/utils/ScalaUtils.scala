@@ -7,7 +7,7 @@ object ScalaUtils {
     var idxArr: Array[Int] = Array.empty[Int]
     for (range <- ranges) {
       val rangeList: List[Int] = range.split("-").toList.map(f => f.toInt)
-      val rangeSeq = List.range(rangeList.head.toInt, rangeList.last.toInt + 1)
+      val rangeSeq = List.range(rangeList.head, rangeList.last + 1)
       idxArr = idxArr ++ rangeSeq
     }
     val mappingColList = (idxArr map colNames).toList
