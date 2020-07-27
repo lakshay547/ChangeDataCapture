@@ -68,9 +68,26 @@
     <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_2.11</artifactId>
-      <version>3.0.5</version>
+      <version>3.2.0</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.scalatestplus/scalatestplus-mockito -->
+    <dependency>
+      <groupId>org.scalatestplus</groupId>
+      <artifactId>scalatestplus-mockito_2.11</artifactId>
+      <version>1.0.0-M2</version>
+      <scope>test</scope>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/org.scalatestplus/scalatestplus-junit -->
+    <dependency>
+      <groupId>org.scalatestplus</groupId>
+      <artifactId>scalatestplus-junit_2.11</artifactId>
+      <version>1.0.0-M2</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
     <dependency>

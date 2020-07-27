@@ -17,7 +17,13 @@ object HiveAccess {
   }
 
   def writeToHiveTable(df: DataFrame,dbName: String,tableName: String,saveMode: String="append"): Unit ={
-    df.write.mode(s"$saveMode").insertInto(s"$dbName.$tableName")
+    try{
+      df.write.mode(s"$saveMode").insertInto(s"$dbName.$tableName")
+    }catch {
+        case e: java.io.IOException => throw e
+        case e: Exception => throw e
+    }
+
   }
 
 }
