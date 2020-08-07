@@ -1,4 +1,5 @@
 /target
 /.idea
+/src/main/result
 ChangeDataCapture.iml
 git

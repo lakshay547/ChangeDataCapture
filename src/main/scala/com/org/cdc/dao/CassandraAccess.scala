@@ -1,4 +1,4 @@
-package com.org.cdc.dbaccess
+package com.org.cdc.dao
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 import com.datastax.spark.connector._

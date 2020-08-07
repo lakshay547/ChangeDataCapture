@@ -1,8 +1,8 @@
-package com.org.cdc.utils
+package com.org.cdc.dao
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object HDFSUtils {
+object HDFSFileAccess {
   def readFromHDFS(hdfsPath:String,hdfsFileName:String,spark:SparkSession): DataFrame ={
     val df=spark.read.option("delimiter",",")
       .option("header","false")

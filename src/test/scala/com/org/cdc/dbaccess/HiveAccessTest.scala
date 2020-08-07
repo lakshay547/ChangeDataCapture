@@ -1,6 +1,7 @@
 package com.org.cdc.dbaccess
 
 import com.org.cdc.SparkSessionTrait
+import com.org.cdc.dao.HiveAccess
 import org.apache.spark.sql.{DataFrame, DataFrameReader, DataFrameWriter, Row, SparkSession}
 import org.junit.runner.RunWith
 import org.scalatest.Assertions
@@ -10,7 +11,7 @@ import org.scalatestplus.junit.JUnitRunner
 import org.scalatestplus.mockito.MockitoSugar
 
 @RunWith(classOf[JUnitRunner])
-abstract class HiveAccessTest extends AnyFunSuite with MockitoSugar with SparkSessionTrait {
+class HiveAccessTest extends AnyFunSuite with MockitoSugar with SparkSessionTrait {
 
   val mockedSparkSession: SparkSession =mock[SparkSession]
   val mockedDataFrameReader: DataFrameReader =mock[DataFrameReader]
