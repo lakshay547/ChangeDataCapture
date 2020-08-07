@@ -1,6 +1,6 @@
 package com.org.cdc.utils
 
-object ScalaUtils {
+object CommonUtils {
 
   def mapIdxAndCol(idx: String,colNames: Array[String]): List[String] ={
     val ranges = idx.split("&")

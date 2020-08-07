@@ -1,7 +1,7 @@
 package com.org.cdc.dao
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import com.org.cdc.utils.ScalaUtils
+import com.org.cdc.utils.CommonUtils
 
 object HiveAccess {
   def readFromHiveTable(dbName:String,tableName: String,spark: SparkSession,columns: String="*"): DataFrame= {
@@ -12,7 +12,7 @@ object HiveAccess {
   def readFromHiveTableWithColIdx(dbName: String,tableName: String,spark: SparkSession,colIdx: String): DataFrame ={
     val hiveSchema=spark.table(s"$dbName.$tableName").schema
     val colNamesList=hiveSchema.names
-    val requiredColumns=ScalaUtils.mapIdxAndCol(colIdx,colNamesList).mkString(",")
+    val requiredColumns=CommonUtils.mapIdxAndCol(colIdx,colNamesList).mkString(",")
     readFromHiveTable(dbName,tableName,spark,requiredColumns)
   }
 

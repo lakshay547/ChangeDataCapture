@@ -2,7 +2,7 @@ package com.org.cdc.functions
 
 import org.apache.spark.sql.{DataFrame, Row}
 import org.apache.spark.sql.functions.{col, lit, md5, struct, udf}
-import com.org.cdc.utils.ScalaUtils
+import com.org.cdc.utils.CommonUtils
 import org.apache.spark.sql.expressions.UserDefinedFunction
 
 object ChangeDataCapture {
@@ -23,8 +23,8 @@ object ChangeDataCapture {
     tgtDF.columns.foreach(i=> renamedTgtDF= renamedTgtDF.withColumnRenamed(s"$i",s"${i}_target"))
 
     //Mapping Business Keys and CDC Attributes to column Names
-    val (srcBusKeys,tgtBusKeys)=ScalaUtils.mapMultipleIdxWithColList(busKeyIdx,srcDF.columns,renamedTgtDF.columns)
-    val (srcCdcAttr,tgtCdcAttr)=ScalaUtils.mapMultipleIdxWithColList(cdcAttributesIdx,srcDF.columns,renamedTgtDF.columns)
+    val (srcBusKeys,tgtBusKeys)=CommonUtils.mapMultipleIdxWithColList(busKeyIdx,srcDF.columns,renamedTgtDF.columns)
+    val (srcCdcAttr,tgtCdcAttr)=CommonUtils.mapMultipleIdxWithColList(cdcAttributesIdx,srcDF.columns,renamedTgtDF.columns)
 
     //Creating Hash Column for Business Key and CDC Attributes
     val hashSrcDF=createHashColumn(createHashColumn(srcDF,srcBusKeys,"busKeyHash"),srcCdcAttr,"srcAttrHash")
